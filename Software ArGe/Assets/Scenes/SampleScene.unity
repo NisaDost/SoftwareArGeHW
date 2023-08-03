@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonPrefab: {fileID: 9160375454892365071, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-  anim: {fileID: 0}
 --- !u!4 &612316526
 Transform:
   m_ObjectHideFlags: 0
@@ -251,7 +250,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649437828
 GameObject:
@@ -342,7 +341,7 @@ Transform:
   - {fileID: 1947207601}
   - {fileID: 649437829}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710933852
 GameObject:
@@ -400,7 +399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947207600
 GameObject:
@@ -460,60 +459,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7747662, y: 12.006471}
   m_EdgeRadius: 0
---- !u!1001 &9160375454589616806
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -5.621
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365064, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9160375454892365071, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
-      propertyPath: m_Name
-      value: Balloon
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 027c7736ff939c54b89a272b6fb3c43b, type: 3}
