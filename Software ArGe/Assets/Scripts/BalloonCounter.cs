@@ -9,16 +9,10 @@ public class BalloonCounter : MonoBehaviour
     [SerializeField] TMP_Text yellowBalloonCounter;
     [SerializeField] TMP_Text blueBalloonCounter;
     
-    private int redBalloonNum = ;
-    private int yellowBalloonNum;
-    private int blueBalloonNum;
+    private int redBalloonNum = 5;
+    private int yellowBalloonNum = 10;
+    private int blueBalloonNum = 15;
 
-    void Start()
-    {
-        redBalloonNum = 5;
-        yellowBalloonNum = 10;
-        blueBalloonNum = 15;
-    }
     void Update()
     {
         redBalloonCounter.text = redBalloonNum.ToString();

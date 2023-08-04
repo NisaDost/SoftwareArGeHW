@@ -38,12 +38,13 @@ public class BalloonMovement : MonoBehaviour
 
     }
 
-    private void OnMouseDown() 
+    private void OnMouseDown() //bug var :D
     {
         if (balloons[balloonNo].tag == "BlueBalloon")
         {
             Debug.Log("Blue Balloon Clicked");
             balloonCounter.setBlueBalloonNum(balloonCounter.getBlueBalloonNum() - 1);
+            Debug.Log(balloonCounter.getBlueBalloonNum() + " Blue Balloon Left");
             if (balloonCounter.getBlueBalloonNum() <= 0)
             {
                 balloonCounter.setBlueBalloonNum(0);
@@ -53,6 +54,9 @@ public class BalloonMovement : MonoBehaviour
         {
             Debug.Log("Red Balloon Clicked");
             balloonCounter.setRedBalloonNum(balloonCounter.getRedBalloonNum() - 1);
+            Debug.Log(balloonCounter.getRedBalloonNum() + " red Balloon Left");
+
+            
             if (balloonCounter.getRedBalloonNum() <= 0)
             {
                 balloonCounter.setRedBalloonNum(0);
@@ -62,6 +66,7 @@ public class BalloonMovement : MonoBehaviour
         {
             Debug.Log("Yellow Balloon Clicked");
             balloonCounter.setYellowBalloonNum(balloonCounter.getYellowBalloonNum() - 1);
+            Debug.Log(balloonCounter.getYellowBalloonNum() + " Yellow Balloon Left");
             if (balloonCounter.getYellowBalloonNum() <= 0)
             {
                 balloonCounter.setYellowBalloonNum(0);
