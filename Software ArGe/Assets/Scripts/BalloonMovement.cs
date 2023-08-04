@@ -28,14 +28,15 @@ public class BalloonMovement : MonoBehaviour
         anim.runtimeAnimatorController = balloons[balloonNo].GetComponent<Animator>().runtimeAnimatorController;
 
         sr.sprite = balloons[balloonNo].GetComponent<SpriteRenderer>().sprite;
-        transform.position = new Vector3(Random.Range(-2.5f, 2.5f), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Random.Range(-8.5f, 8.5f), transform.position.y, transform.position.z);
 
         force = new Vector3(Random.Range(-100, 100), Random.Range(100, 200), 0);
         rb.AddForce(force);
 
     }
 
-    private void OnMouseDown() { //balonlara health sistemi eklenecek - farklı scriptte de olabilir
+    private void OnMouseDown() 
+    { //balonlara health sistemi eklenecek - farklı scriptte de olabilir
         // if (gameObject.CompareTag("BlueBalloon"))
         // {
         //     PopBalloon();
