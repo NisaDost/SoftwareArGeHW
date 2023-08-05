@@ -10,6 +10,7 @@ public class BalloonCounter : MonoBehaviour
     [SerializeField] TMP_Text blueBalloonCounter;
 
     [SerializeField] GameObject[] checkImg;
+    AudioSource audioSource;
     
     int redBalloonNum;
     int yellowBalloonNum;
@@ -18,16 +19,13 @@ public class BalloonCounter : MonoBehaviour
     public bool redBalloonCheck;
     public bool yellowBalloonCheck;
     public bool blueBalloonCheck;
-
+    
     void Awake()
     {
         redBalloonNum = Random.Range(3, 5);
         yellowBalloonNum = Random.Range(5, 10);
         blueBalloonNum = Random.Range(10, 15);
-
-        Debug.Log("Red Balloon number: " + redBalloonNum);
-        Debug.Log("Yellow Balloon number: " + yellowBalloonNum);
-        Debug.Log("Blue Balloon number: " + blueBalloonNum);
+        audioSource = GetComponent<AudioSource>(); //check audio düzgün çalışmıyor
     }
     void Update()
     {
@@ -44,6 +42,11 @@ public class BalloonCounter : MonoBehaviour
             redBalloonNum = 0;
             checkImg[0].SetActive(true);
             redBalloonCheck = true;
+            // if (redBalloonCheck)
+            // {
+            //     audioSource.Play();
+            //     redBalloonCheck = false;
+            // }
         }
     }
     public void reduceYellowBalloonNum()
@@ -54,6 +57,11 @@ public class BalloonCounter : MonoBehaviour
             yellowBalloonNum = 0;
             checkImg[1].SetActive(true);
             yellowBalloonCheck = true;
+            // if (yellowBalloonCheck)
+            // {
+            //     audioSource.Play();
+            //     yellowBalloonCheck = false;
+            // }
         }
     }
     public void reduceBlueBalloonNum()
@@ -65,5 +73,10 @@ public class BalloonCounter : MonoBehaviour
             checkImg[2].SetActive(true);
             blueBalloonCheck = true;
         }
+        // if (blueBalloonCheck)
+        // {
+        //     audioSource.Play();
+        //     blueBalloonCheck = false;
+        // }
     }
 }

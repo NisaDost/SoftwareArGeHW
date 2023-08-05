@@ -41,11 +41,12 @@ public class BalloonMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        audioSource.Play();
+        PopBalloon();
         if (balloons[balloonNo].tag == "RedBalloon")
         {
             Debug.Log("Red Balloon Clicked");
             balloonCounter.reduceRedBalloonNum();
-
         }
         if (balloons[balloonNo].tag == "YellowBalloon")
         {
@@ -58,8 +59,6 @@ public class BalloonMovement : MonoBehaviour
             balloonCounter.reduceBlueBalloonNum();
                         
         }
-        audioSource.Play();
-        PopBalloon();
     }
 
     void PopBalloon()
