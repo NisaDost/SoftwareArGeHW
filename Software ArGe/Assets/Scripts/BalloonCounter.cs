@@ -19,7 +19,8 @@ public class BalloonCounter : MonoBehaviour
     public bool redBalloonCheck = false;
     public bool yellowBalloonCheck = false;
     public bool blueBalloonCheck = false;
-    //bool isAllChecked = false;
+
+    public bool isAllBalloonsChecked = false;
     
     void Awake()
     {
@@ -76,5 +77,12 @@ public class BalloonCounter : MonoBehaviour
                 blueBalloonCheck = true;
             }
         }
+    }
+    public bool UpdateChecks(){
+        if (redBalloonCheck && yellowBalloonCheck && blueBalloonCheck)
+        {
+            isAllBalloonsChecked = true;
+        }
+            return isAllBalloonsChecked;
     }
 }

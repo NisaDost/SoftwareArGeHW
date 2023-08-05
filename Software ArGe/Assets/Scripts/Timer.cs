@@ -10,6 +10,9 @@ public class Timer : MonoBehaviour
     Health health;
     float currentTime = 0f;
     float startingTime = 30f;
+    
+    bool isLevelWon = true;
+    bool isLevelLose = true;
 
     [SerializeField] TMP_Text TimerCoundown;
     
@@ -29,21 +32,31 @@ public class Timer : MonoBehaviour
         {
             TimerCoundown.color = Color.red;
         }
+
+        if (balloonCounter.UpdateChecks())
+        {
+            Time.timeScale = 0;
+            if (isLevelWon == true) // win yazısını 1 kere almak için
+            {
+                Debug.Log("You Win");
+                isLevelWon = false;
+                //next level panel
+            }  
+        }
+        
         if (currentTime <= 0)
         {
             currentTime = 0;
             Time.timeScale = 0;
-            if (balloonCounter.redBalloonCheck == true 
-                && balloonCounter.yellowBalloonCheck == true 
-                && balloonCounter.blueBalloonCheck == true)
+            
+            if (balloonCounter.UpdateChecks() == false) 
             {
-                Debug.Log("You Win");
-                //next level panel   
-            }
-            else
-            {
-                Debug.Log("You Lose");
-                health.ReduceHealth(); //update içinde olduğundan düzgün çalışmıyor
+                if (isLevelLose == true) // lose yazısını 1 kere almak için
+                {
+                    Debug.Log("You Lose");
+                    health.ReduceHealth();
+                    isLevelLose = false;
+                } 
                 //restart panel
             }
         }
