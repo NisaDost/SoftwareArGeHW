@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
 {
     BalloonCounter balloonCounter;
     Health health;
+    Level1EndPanel levelEndPanel;
+
     float currentTime = 0f;
     float startingTime = 30f;
     
@@ -18,8 +20,10 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
-        health = FindObjectOfType<Health>();
         balloonCounter = FindObjectOfType<BalloonCounter>();
+        health = FindObjectOfType<Health>();
+        levelEndPanel = FindObjectOfType<Level1EndPanel>();
+
         currentTime = startingTime;
     }
 
@@ -40,7 +44,7 @@ public class Timer : MonoBehaviour
             {
                 Debug.Log("You Win");
                 isLevelWon = false;
-                //next level panel
+                levelEndPanel.WonPanel();
             }  
         }
         

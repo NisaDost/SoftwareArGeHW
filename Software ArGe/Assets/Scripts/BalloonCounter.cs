@@ -27,7 +27,7 @@ public class BalloonCounter : MonoBehaviour
         redBalloonNum = Random.Range(3, 5);
         yellowBalloonNum = Random.Range(5, 10);
         blueBalloonNum = Random.Range(10, 15);
-        audioSource = GetComponent<AudioSource>(); //check audio düzgün çalışmıyor
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -36,7 +36,7 @@ public class BalloonCounter : MonoBehaviour
         blueBalloonCounter.text = blueBalloonNum.ToString();
     }
 
-    public void reduceRedBalloonNum()
+    public void ReduceRedBalloonNum()
     {
         this.redBalloonNum--;
         if (redBalloonNum <= 0)
@@ -50,7 +50,7 @@ public class BalloonCounter : MonoBehaviour
             }
         }
     }
-    public void reduceYellowBalloonNum()
+    public void ReduceYellowBalloonNum()
     {
         this.yellowBalloonNum--;
         if (yellowBalloonNum <= 0)
@@ -64,7 +64,7 @@ public class BalloonCounter : MonoBehaviour
             }
         }
     }
-    public void reduceBlueBalloonNum()
+    public void ReduceBlueBalloonNum()
     {
         this.blueBalloonNum--;
         if (blueBalloonNum <= 0)

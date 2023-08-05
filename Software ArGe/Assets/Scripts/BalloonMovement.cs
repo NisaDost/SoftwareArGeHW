@@ -46,17 +46,17 @@ public class BalloonMovement : MonoBehaviour
         if (balloons[balloonNo].tag == "RedBalloon")
         {
             //Debug.Log("Red Balloon Clicked");
-            balloonCounter.reduceRedBalloonNum();
+            balloonCounter.ReduceRedBalloonNum();
         }
         if (balloons[balloonNo].tag == "YellowBalloon")
         {
             //Debug.Log("Yellow Balloon Clicked");
-            balloonCounter.reduceYellowBalloonNum();
+            balloonCounter.ReduceYellowBalloonNum();
         }
         if (balloons[balloonNo].tag == "BlueBalloon")
         {
             //Debug.Log("Blue Balloon Clicked");
-            balloonCounter.reduceBlueBalloonNum();
+            balloonCounter.ReduceBlueBalloonNum();
                         
         }
     }
