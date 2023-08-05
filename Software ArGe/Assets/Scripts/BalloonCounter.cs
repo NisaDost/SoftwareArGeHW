@@ -8,39 +8,62 @@ public class BalloonCounter : MonoBehaviour
     [SerializeField] TMP_Text redBalloonCounter;
     [SerializeField] TMP_Text yellowBalloonCounter;
     [SerializeField] TMP_Text blueBalloonCounter;
-    
-    private int redBalloonNum = 5;
-    private int yellowBalloonNum = 10;
-    private int blueBalloonNum = 15;
 
+    [SerializeField] GameObject[] checkImg;
+    
+    int redBalloonNum;
+    int yellowBalloonNum;
+    int blueBalloonNum;
+
+    public bool redBalloonCheck;
+    public bool yellowBalloonCheck;
+    public bool blueBalloonCheck;
+
+    void Awake()
+    {
+        redBalloonNum = Random.Range(3, 5);
+        yellowBalloonNum = Random.Range(5, 10);
+        blueBalloonNum = Random.Range(10, 15);
+
+        Debug.Log("Red Balloon number: " + redBalloonNum);
+        Debug.Log("Yellow Balloon number: " + yellowBalloonNum);
+        Debug.Log("Blue Balloon number: " + blueBalloonNum);
+    }
     void Update()
     {
         redBalloonCounter.text = redBalloonNum.ToString();
         yellowBalloonCounter.text = yellowBalloonNum.ToString();
         blueBalloonCounter.text = blueBalloonNum.ToString();
     }
-    public void setRedBalloonNum(int num)
+
+    public void reduceRedBalloonNum()
     {
-        this.redBalloonNum = num;
+        this.redBalloonNum--;
+        if (redBalloonNum <= 0)
+        {
+            redBalloonNum = 0;
+            checkImg[0].SetActive(true);
+            redBalloonCheck = true;
+        }
     }
-    public int getRedBalloonNum()
+    public void reduceYellowBalloonNum()
     {
-        return redBalloonNum;
+        this.yellowBalloonNum--;
+        if (yellowBalloonNum <= 0)
+        {
+            yellowBalloonNum = 0;
+            checkImg[1].SetActive(true);
+            yellowBalloonCheck = true;
+        }
     }
-    public void setYellowBalloonNum(int num)
+    public void reduceBlueBalloonNum()
     {
-        this.yellowBalloonNum = num;
-    }
-    public int getYellowBalloonNum()
-    {
-        return yellowBalloonNum;
-    }
-    public void setBlueBalloonNum(int num)
-    {
-        this.blueBalloonNum = num;
-    }
-    public int getBlueBalloonNum()
-    {
-        return blueBalloonNum;
+        this.blueBalloonNum--;
+        if (blueBalloonNum <= 0)
+        {
+            blueBalloonNum = 0;
+            checkImg[2].SetActive(true);
+            blueBalloonCheck = true;
+        }
     }
 }

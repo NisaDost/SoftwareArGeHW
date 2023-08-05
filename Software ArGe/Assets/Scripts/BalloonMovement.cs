@@ -9,7 +9,7 @@ public class BalloonMovement : MonoBehaviour
     [SerializeField] Vector3 force;
     [SerializeField] GameObject[] balloons; //genel balon için array
     private GameObject randomBalloons; //özel balonlar
-    private int balloonNo;
+    private int balloonNo; //array içine atanıp balon belirlemek için
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
@@ -18,12 +18,13 @@ public class BalloonMovement : MonoBehaviour
 
     void Start()
     {
+        balloonCounter = FindObjectOfType<BalloonCounter>(); // bu referans olmazsa balon sayısı ekrana yazılmaz
+
         rb = GetComponent<Rigidbody2D>();
         randomBalloons = GetComponent<GameObject>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        //balloonCounter = GetComponent<BalloonCounter>();
 
         balloonNo = Random.Range(0, balloons.Length);
 
@@ -38,39 +39,24 @@ public class BalloonMovement : MonoBehaviour
 
     }
 
-    private void OnMouseDown() //bug var :D
+    private void OnMouseDown()
     {
-        if (balloons[balloonNo].tag == "BlueBalloon")
-        {
-            Debug.Log("Blue Balloon Clicked");
-            balloonCounter.setBlueBalloonNum(balloonCounter.getBlueBalloonNum() - 1);
-            Debug.Log(balloonCounter.getBlueBalloonNum() + " Blue Balloon Left");
-            if (balloonCounter.getBlueBalloonNum() <= 0)
-            {
-                balloonCounter.setBlueBalloonNum(0);
-            }
-        }
         if (balloons[balloonNo].tag == "RedBalloon")
         {
             Debug.Log("Red Balloon Clicked");
-            balloonCounter.setRedBalloonNum(balloonCounter.getRedBalloonNum() - 1);
-            Debug.Log(balloonCounter.getRedBalloonNum() + " red Balloon Left");
+            balloonCounter.reduceRedBalloonNum();
 
-            
-            if (balloonCounter.getRedBalloonNum() <= 0)
-            {
-                balloonCounter.setRedBalloonNum(0);
-            }
         }
         if (balloons[balloonNo].tag == "YellowBalloon")
         {
             Debug.Log("Yellow Balloon Clicked");
-            balloonCounter.setYellowBalloonNum(balloonCounter.getYellowBalloonNum() - 1);
-            Debug.Log(balloonCounter.getYellowBalloonNum() + " Yellow Balloon Left");
-            if (balloonCounter.getYellowBalloonNum() <= 0)
-            {
-                balloonCounter.setYellowBalloonNum(0);
-            }
+            balloonCounter.reduceYellowBalloonNum();
+        }
+        if (balloons[balloonNo].tag == "BlueBalloon")
+        {
+            Debug.Log("Blue Balloon Clicked");
+            balloonCounter.reduceBlueBalloonNum();
+                        
         }
         audioSource.Play();
         PopBalloon();
