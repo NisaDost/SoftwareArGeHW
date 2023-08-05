@@ -16,9 +16,10 @@ public class BalloonCounter : MonoBehaviour
     int yellowBalloonNum;
     int blueBalloonNum;
 
-    public bool redBalloonCheck;
-    public bool yellowBalloonCheck;
-    public bool blueBalloonCheck;
+    public bool redBalloonCheck = false;
+    public bool yellowBalloonCheck = false;
+    public bool blueBalloonCheck = false;
+    //bool isAllChecked = false;
     
     void Awake()
     {
@@ -41,12 +42,11 @@ public class BalloonCounter : MonoBehaviour
         {
             redBalloonNum = 0;
             checkImg[0].SetActive(true);
-            redBalloonCheck = true;
-            // if (redBalloonCheck)
-            // {
-            //     audioSource.Play();
-            //     redBalloonCheck = false;
-            // }
+            if (!redBalloonCheck) //plays only once
+            {
+                redBalloonCheck = true;
+                audioSource.Play();
+            }
         }
     }
     public void reduceYellowBalloonNum()
@@ -56,12 +56,11 @@ public class BalloonCounter : MonoBehaviour
         {
             yellowBalloonNum = 0;
             checkImg[1].SetActive(true);
-            yellowBalloonCheck = true;
-            // if (yellowBalloonCheck)
-            // {
-            //     audioSource.Play();
-            //     yellowBalloonCheck = false;
-            // }
+            if (!yellowBalloonCheck) //plays only once
+            {
+                yellowBalloonCheck = true;
+                audioSource.Play();
+            }
         }
     }
     public void reduceBlueBalloonNum()
@@ -70,13 +69,12 @@ public class BalloonCounter : MonoBehaviour
         if (blueBalloonNum <= 0)
         {
             blueBalloonNum = 0;
-            checkImg[2].SetActive(true);
-            blueBalloonCheck = true;
+            checkImg[2].SetActive(true);//plays only once
+            if (!blueBalloonCheck)
+            {
+                audioSource.Play();
+                blueBalloonCheck = true;
+            }
         }
-        // if (blueBalloonCheck)
-        // {
-        //     audioSource.Play();
-        //     blueBalloonCheck = false;
-        // }
     }
 }
