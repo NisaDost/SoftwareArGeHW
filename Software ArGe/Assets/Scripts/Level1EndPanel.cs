@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class Level1EndPanel : MonoBehaviour
 {
     Health health;
-    float heartCooldown = 0f; // can cooldown u neredee olmalı???
 
     [SerializeField] GameObject panel; //setactive yapılacak obje
 
@@ -17,7 +16,6 @@ public class Level1EndPanel : MonoBehaviour
     Image banner;
 
     [SerializeField] TMP_Text winStatusText;
-    [SerializeField] TMP_Text healthTimerText;
 
     [SerializeField] Button button;
     [SerializeField] Sprite[] buttonSprites;
@@ -48,11 +46,15 @@ public class Level1EndPanel : MonoBehaviour
     }
 
     public void Retry(){
+        health.ReduceHealth(); // can 2 kere azalıyor
         if(health.ReduceHealth() <= 0){
             winStatusText.text = "No more lives left!";
-            healthTimerText.text = ""; //bu burada mı olmalı?
+            button.enabled = false; //disable olmadı
+            health.StartHealthTimer(health.heartCooldown);
         }
-        SceneManager.LoadScene("Level1");
+        else{
+            SceneManager.LoadScene("Level1");
+        }
     }
     public void NextLevel(){
         SceneManager.LoadScene("Level2");

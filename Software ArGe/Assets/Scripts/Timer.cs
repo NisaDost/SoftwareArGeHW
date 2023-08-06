@@ -60,7 +60,6 @@ public class Timer : MonoBehaviour
                 {
                     Debug.Log("You Lose");
                     isLevelLose = false;
-                    health.ReduceHealth();
                     levelEndPanel.LosePanel();
                 } 
                 //restart panel

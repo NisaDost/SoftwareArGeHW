@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
+    public float heartCooldown = 90f;
+    [SerializeField] TMP_Text healthTimerText;
+    bool noMoreLives = false;
+
     [SerializeField] static int health = 3;
     [SerializeField] int numOfHearts = 3;
 
@@ -12,8 +17,18 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    void Start()
+    {
+        healthTimerText = FindObjectOfType<TMP_Text>();
+    }
     void Update()
     {
+        if (noMoreLives == true && heartCooldown > 0)
+        {
+            heartCooldown -= Time.deltaTime;
+            StartHealthTimer(heartCooldown);
+        }
+
         if (health > numOfHearts)
         {
             health = numOfHearts;
@@ -40,7 +55,22 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
+            noMoreLives = true;
         }
         return health;
     }
+
+    public void StartHealthTimer(float timeToDisplay)
+    {
+        healthTimerText.enabled = false; //null reference hatası veriyor
+        if (timeToDisplay < 0)
+        {
+            timeToDisplay = 0;
+        }
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        healthTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //çalışmadı
+        
+    }
+    
 }

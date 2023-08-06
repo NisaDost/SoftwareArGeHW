@@ -56,9 +56,9 @@ public class BalloonMovement : MonoBehaviour
         if (balloons[balloonNo].tag == "BlueBalloon")
         {
             //Debug.Log("Blue Balloon Clicked");
-            balloonCounter.ReduceBlueBalloonNum();
-                        
+            balloonCounter.ReduceBlueBalloonNum();                        
         }
+        GetComponent<Collider2D>().enabled = false;
     }
 
     void PopBalloon()
