@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     Level1EndPanel levelEndPanel;
 
     float currentTime = 0f;
-    float startingTime = 15f;
+    float startingTime = 3f;
     
     bool isLevelWon = true;
     bool isLevelLose = true;

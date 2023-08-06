@@ -19,7 +19,9 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        healthTimerText = FindObjectOfType<TMP_Text>();
+        //bunun yüzünden yanlış componenti buluyor
+        healthTimerText = GameObject.Find("HealthTimerText").GetComponent<TMP_Text>();
+        healthTimerText.enabled = false;
     }
     void Update()
     {
@@ -62,15 +64,18 @@ public class Health : MonoBehaviour
 
     public void StartHealthTimer(float timeToDisplay)
     {
-        healthTimerText.enabled = false; //null reference hatası veriyor
+        healthTimerText.enabled = true; 
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
         }
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        healthTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); //çalışmadı
-        
+        healthTimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds); 
+    }
+    public int GetHealth()
+    {
+        return health;
     }
     
 }
