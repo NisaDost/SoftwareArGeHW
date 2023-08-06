@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int health = 3;
+    [SerializeField] static int health = 3;
     [SerializeField] int numOfHearts = 3;
 
     public Image[] hearts;
@@ -34,13 +34,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ReduceHealth()
+    public int ReduceHealth()
     {
-        this.health--;
+        health--;
         if (health <= 0)
         {
             health = 0;
-            //restart panel
         }
+        return health;
     }
 }

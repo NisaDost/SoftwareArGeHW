@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     Level1EndPanel levelEndPanel;
 
     float currentTime = 0f;
-    float startingTime = 30f;
+    float startingTime = 15f;
     
     bool isLevelWon = true;
     bool isLevelLose = true;
@@ -20,9 +20,10 @@ public class Timer : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale = 1;
         balloonCounter = FindObjectOfType<BalloonCounter>();
         health = FindObjectOfType<Health>();
-        levelEndPanel = FindObjectOfType<Level1EndPanel>();
+        levelEndPanel = GetComponent<Level1EndPanel>();
 
         currentTime = startingTime;
     }
@@ -58,8 +59,9 @@ public class Timer : MonoBehaviour
                 if (isLevelLose == true) // lose yazısını 1 kere almak için
                 {
                     Debug.Log("You Lose");
-                    health.ReduceHealth();
                     isLevelLose = false;
+                    health.ReduceHealth();
+                    levelEndPanel.LosePanel();
                 } 
                 //restart panel
             }

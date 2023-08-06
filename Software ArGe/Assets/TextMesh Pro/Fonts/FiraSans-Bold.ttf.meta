@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b87996c750c934746b92c02df35aca63
+guid: cb698c828bdbc084fb6ea09c66fef554
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Impact
+  - Fira Sans
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
