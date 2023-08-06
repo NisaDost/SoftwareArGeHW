@@ -48,7 +48,6 @@ public class Level1EndPanel : MonoBehaviour
             winStatusText.text = "No more lives left!";
             button.image.sprite = buttonSprites[1];
             button.interactable = false;
-            //health.StartHealthTimer(health.heartCooldown);
         }
         else
         {
@@ -58,7 +57,6 @@ public class Level1EndPanel : MonoBehaviour
             button.image.sprite = buttonSprites[1];
             button.onClick.AddListener(Retry);
         }
-
     }
 
     public void Retry()

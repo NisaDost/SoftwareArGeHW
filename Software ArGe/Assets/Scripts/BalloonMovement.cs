@@ -34,7 +34,7 @@ public class BalloonMovement : MonoBehaviour
         
         transform.position = new Vector3(Random.Range(-8.5f, 8.5f), transform.position.y, transform.position.z);
 
-        force = new Vector3(Random.Range(-100, 100), Random.Range(100, 200), 0);
+        force = new Vector3(Random.Range(-100, 100), 150, 0);
         rb.AddForce(force);
 
     }

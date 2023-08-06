@@ -7,8 +7,9 @@ using TMPro;
 public class Health : MonoBehaviour
 {
     public float heartCooldown = 90f;
-    [SerializeField] TMP_Text healthTimerText;
     bool noMoreLives = false;
+
+    [SerializeField] TMP_Text healthTimerText;
 
     [SerializeField] static int health = 3;
     [SerializeField] int numOfHearts = 3;
@@ -19,7 +20,6 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        //bunun yüzünden yanlış componenti buluyor
         healthTimerText = GameObject.Find("HealthTimerText").GetComponent<TMP_Text>();
         healthTimerText.enabled = false;
     }
@@ -27,7 +27,6 @@ public class Health : MonoBehaviour
     {
         if (noMoreLives == true && heartCooldown > 0)
         {
-            heartCooldown -= Time.deltaTime;
             StartHealthTimer(heartCooldown);
         }
 
@@ -65,6 +64,7 @@ public class Health : MonoBehaviour
     public void StartHealthTimer(float timeToDisplay)
     {
         healthTimerText.enabled = true; 
+        heartCooldown -= Time.deltaTime;
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
