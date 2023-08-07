@@ -10,7 +10,7 @@ public class Level1EndPanel : MonoBehaviour
     Health health;
     [SerializeField] TMP_Text healthTimerText;
 
-    [SerializeField] GameObject panel; //setactive yapılacak obje
+    [SerializeField] GameObject panel;
 
     [SerializeField] GameObject panelBG; 
     [SerializeField] Sprite[] banners;
@@ -34,12 +34,21 @@ public class Level1EndPanel : MonoBehaviour
     public void WonPanel()
     {
         panel.SetActive(true);
-
         banner.sprite = banners[0];
-        winStatusText.text = "Level 1 Completed!";
-        button.image.sprite = buttonSprites[0];
-        button.onClick.AddListener(NextLevel);
         hourglassAnim.enabled = false;
+
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            winStatusText.text = "Level 1 Completed!";
+            button.image.sprite = buttonSprites[0];
+            button.onClick.AddListener(NextLevel);
+        }
+        else if(SceneManager.GetActiveScene().name == "Level2")
+        {
+            winStatusText.text = "Game Completed!";
+            button.image.sprite = buttonSprites[2];
+            button.onClick.AddListener(GameOver);
+        }
 
     }
     public void LosePanel()
@@ -50,19 +59,40 @@ public class Level1EndPanel : MonoBehaviour
         button.image.sprite = buttonSprites[1];
         hourglassAnim.enabled = false;
 
-        if(health.GetHealth() <= 0)
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
-            winStatusText.text = "No more lives left!";
-            button.interactable = false;
+            if(health.GetHealth() <= 0)
+            {
+                winStatusText.text = "No more lives left!";
+                button.interactable = false;
+            }
+            else
+            {
+                winStatusText.text = "You Lose!";
+                button.interactable = true;
+                button.onClick.AddListener(Retry);
+            }
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Level2")
         {
-            winStatusText.text = "You Lose!";
-            button.interactable = true;
-            button.onClick.AddListener(Retry);
+            if(health.GetHealth() <= 0)
+            {
+                winStatusText.text = "No more lives left!";
+                button.interactable = false;
+            }
+            else
+            {
+                winStatusText.text = "You Lose!";
+                button.interactable = true;
+                button.onClick.AddListener(Retry2);
+            }
         }
     }
 
+    public void Retry2()
+    {
+        SceneManager.LoadSceneAsync("Level2");
+    }
     public void Retry()
     {
         SceneManager.LoadSceneAsync("Level1");
@@ -71,4 +101,9 @@ public class Level1EndPanel : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Level2");
     }
+    public void GameOver()
+    {
+        Application.Quit();
+    }
 }
+

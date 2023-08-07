@@ -8,6 +8,7 @@ TagManager:
   - YellowBalloon
   - RedBalloon
   - BlueBalloon
+  - Bomb
   layers:
   - Default
   - TransparentFX
