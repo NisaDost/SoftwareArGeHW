@@ -81,7 +81,7 @@ public class Health : MonoBehaviour
             healthTimerText.enabled = false;
             health = 3;
             noMoreLives = false;
-            level1EndPanel.LosePanel();
+            level1EndPanel.LosePanel(); //normalden 1 eksik canla oynatıyor
         }
     }
     public int GetHealth()

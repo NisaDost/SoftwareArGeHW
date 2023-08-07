@@ -5,6 +5,7 @@ using UnityEngine;
 public class BalloonSpawner : MonoBehaviour
 {
     [SerializeField] GameObject balloonPrefab;
+    float elapsed = 0f;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class BalloonSpawner : MonoBehaviour
     void SpawnBalloon()
     {
         Instantiate(balloonPrefab, transform.position, Quaternion.identity);
+        elapsed += Time.deltaTime;
+        Time.timeScale = Mathf.Lerp(1f, 4f, elapsed);
         
     }
 }

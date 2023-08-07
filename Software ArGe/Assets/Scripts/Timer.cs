@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     Level1EndPanel levelEndPanel;
 
     float currentTime = 0f;
-    float startingTime = 3f;
+    float startingTime = 30f;
     
     bool isLevelWon = true;
     bool isLevelLose = true;
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        currentTime -= 1f * Time.deltaTime; //oyun süresini belirleyen timer
+        currentTime -= 1f * Time.unscaledDeltaTime; //oyun süresini belirleyen timer
         TimerCoundown.text = currentTime.ToString("0");
 
         if (currentTime < 10)
