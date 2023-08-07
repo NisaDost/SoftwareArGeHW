@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BalloonMovement : MonoBehaviour
 {
+    private RuntimeAnimatorController animatorController;
     public BalloonCounter balloonCounter;
     [SerializeField] Vector3 force;
     [SerializeField] GameObject[] balloons; //genel balon için array
@@ -27,7 +28,7 @@ public class BalloonMovement : MonoBehaviour
 
         balloonNo = Random.Range(0, balloons.Length);
 
-        anim = balloons[balloonNo].GetComponent<Animator>();
+        anim.runtimeAnimatorController = balloons[balloonNo].GetComponent<Animator>().runtimeAnimatorController;
 
         sr.sprite = balloons[balloonNo].GetComponent<SpriteRenderer>().sprite;
         

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BombMovement : MonoBehaviour
 {
-   
+    RuntimeAnimatorController runtimeAnimatorController;
     [SerializeField] Vector3 force;
     [SerializeField] GameObject bomb;
     private SpriteRenderer sr;
@@ -13,9 +13,12 @@ public class BombMovement : MonoBehaviour
     private AudioSource audioSource;
 
     Level1EndPanel level1EndPanel;
+    Timer timer;
+
     void Start()
     {
 
+        timer = FindObjectOfType<Timer>();
         rb = GetComponent<Rigidbody2D>();
   
         sr = GetComponent<SpriteRenderer>();
@@ -24,8 +27,9 @@ public class BombMovement : MonoBehaviour
 
         level1EndPanel = FindObjectOfType<Level1EndPanel>();
 
-
         anim = bomb.GetComponent<Animator>();
+
+        anim.runtimeAnimatorController = bomb.GetComponent<Animator>().runtimeAnimatorController;
 
         sr.sprite = bomb.GetComponent<SpriteRenderer>().sprite;
         
@@ -43,6 +47,7 @@ public class BombMovement : MonoBehaviour
         
         Time.timeScale = 0f;
         level1EndPanel.LosePanel();
+        timer.SetTimer(0f);
 
         GetComponent<Collider2D>().enabled = false;
     }

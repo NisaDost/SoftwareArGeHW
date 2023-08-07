@@ -78,11 +78,12 @@ public class BalloonCounter : MonoBehaviour
             }
         }
     }
-    public bool UpdateChecks(){
+    public bool UpdateChecks()
+    {
         if (redBalloonCheck && yellowBalloonCheck && blueBalloonCheck)
         {
             isAllBalloonsChecked = true;
         }
-            return isAllBalloonsChecked;
-    }
+        return isAllBalloonsChecked;
+    }  
 }

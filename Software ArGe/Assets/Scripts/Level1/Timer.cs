@@ -68,4 +68,8 @@ public class Timer : MonoBehaviour
             }
         }
     }
+    public void SetTimer(float time)
+    {
+        currentTime = time;
+    }
 }
