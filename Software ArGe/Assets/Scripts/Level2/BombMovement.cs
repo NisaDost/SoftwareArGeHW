@@ -44,9 +44,7 @@ public class BombMovement : MonoBehaviour
     {
         audioSource.Play();
         Explode();
-        
         Time.timeScale = 0f;
-        level1EndPanel.LosePanel();
         timer.SetTimer(0f);
 
         GetComponent<Collider2D>().enabled = false;

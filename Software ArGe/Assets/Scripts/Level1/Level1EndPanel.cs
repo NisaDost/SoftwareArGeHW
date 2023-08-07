@@ -47,7 +47,7 @@ public class Level1EndPanel : MonoBehaviour
         {
             winStatusText.text = "Game Completed!";
             button.image.sprite = buttonSprites[2];
-            button.onClick.AddListener(GameOver);
+            button.onClick.AddListener(Home);
         }
 
     }
@@ -101,9 +101,10 @@ public class Level1EndPanel : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Level2");
     }
-    public void GameOver()
+    public void Home()
     {
-        Application.Quit();
+        SceneManager.LoadSceneAsync("Entry");
+        health.SetHealth(3);
     }
 }
 

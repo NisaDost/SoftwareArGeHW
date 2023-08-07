@@ -63,8 +63,7 @@ public class Timer : MonoBehaviour
                     Debug.Log("You Lose");
                     isLevelLose = false;
                     levelEndPanel.LosePanel();
-                } 
-                //restart panel
+                }
             }
         }
     }

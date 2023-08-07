@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BalloonSpawner : MonoBehaviour
 {
@@ -16,7 +17,14 @@ public class BalloonSpawner : MonoBehaviour
     {
         Instantiate(balloonPrefab, transform.position, Quaternion.identity);
         elapsed += Time.deltaTime;
-        Time.timeScale = Mathf.Lerp(1f, 2.4f, elapsed);
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            Time.timeScale = Mathf.Lerp(1f, 2f, elapsed);
+        }
+        else if(SceneManager.GetActiveScene().name == "Level2")
+        {
+            Time.timeScale = Mathf.Lerp(1.5f, 2.8f, elapsed);
+        }
         
     }
 }

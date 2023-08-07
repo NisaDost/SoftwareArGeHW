@@ -89,5 +89,9 @@ public class Health : MonoBehaviour
     {
         return health;
     }
+    public void SetHealth(int newHealth)
+    {
+        health = newHealth;
+    }
     
 }
