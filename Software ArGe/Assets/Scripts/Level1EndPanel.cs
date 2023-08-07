@@ -55,6 +55,7 @@ public class Level1EndPanel : MonoBehaviour
             banner.sprite = banners[1];
             winStatusText.text = "You Lose!";
             button.image.sprite = buttonSprites[1];
+            button.interactable = true;
             button.onClick.AddListener(Retry);
         }
     }
@@ -68,5 +69,4 @@ public class Level1EndPanel : MonoBehaviour
     {
         SceneManager.LoadScene("Level2");
     }
-
 }

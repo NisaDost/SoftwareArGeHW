@@ -903,7 +903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c7854fa7907c943a722dd1f463badd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heartCooldown: 90
   healthTimerText: {fileID: 33708871}
   numOfHearts: 3
   hearts:

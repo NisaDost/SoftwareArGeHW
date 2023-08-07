@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     Level1EndPanel levelEndPanel;
 
     float currentTime = 0f;
-    float startingTime = 30f;
+    float startingTime = 3f;
     
     bool isLevelWon = true;
     bool isLevelLose = true;
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        currentTime -= 1f * Time.deltaTime;
+        currentTime -= 1f * Time.deltaTime; //oyun süresini belirleyen timer
         TimerCoundown.text = currentTime.ToString("0");
 
         if (currentTime < 10)
@@ -52,7 +52,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            Time.timeScale = 0;//timescale 0 iken health timer çalışmıyor
+            Time.timeScale = 0;
             
             if (balloonCounter.UpdateChecks() == false) 
             {
