@@ -14,7 +14,15 @@ public class Buttons : MonoBehaviour
     {
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         soundButton = GameObject.Find("SoundButton");
-        soundButton.GetComponent<Image>().sprite = audioSprite[0];
+        
+        if (AudioListener.volume == 1f)
+        {
+            soundButton.GetComponent<Image>().sprite = audioSprite[0];
+        }
+        else
+        {
+            soundButton.GetComponent<Image>().sprite = audioSprite[1];
+        }
     }
 
     public void Play(){
@@ -30,6 +38,7 @@ public class Buttons : MonoBehaviour
         {
             AudioListener.volume = 1f;
             soundButton.GetComponent<Image>().sprite = audioSprite[0];
+
         }
     }
 }
