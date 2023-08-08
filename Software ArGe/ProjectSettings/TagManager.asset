@@ -9,6 +9,7 @@ TagManager:
   - RedBalloon
   - BlueBalloon
   - Bomb
+  - PurpleBalloon
   layers:
   - Default
   - TransparentFX

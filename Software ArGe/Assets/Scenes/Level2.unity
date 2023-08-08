@@ -371,6 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df9a782c8e449144bbd1f4f05efdf9ef, type: 3}
+--- !u!1 &103822151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6461996846753349244, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+  m_PrefabInstance: {fileID: 1754388903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &149510867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 637612347898913351, guid: 9dba2aefcf79d5f4aa62288fc46857d7, type: 3}
@@ -599,6 +604,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.534912, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &607762799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607762801}
+  - component: {fileID: 607762800}
+  m_Layer: 0
+  m_Name: PurpleBalloonSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &607762800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607762799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95733b4dcca098b4fae9ee7a06157bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purpleBalloonPrefab: {fileID: 5968875976201957356, guid: 78158bb8d0975c243892301252dec68d, type: 3}
+--- !u!4 &607762801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607762799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.89, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612316524
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612316524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.89, z: 0}
+  m_LocalPosition: {x: 0, y: -5.89, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1245,51 +1295,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4620049766661905333, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
   m_PrefabInstance: {fileID: 1754388903}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1246008279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1246008281}
-  - component: {fileID: 1246008280}
-  m_Layer: 0
-  m_Name: PurpleBalloonSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1246008280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246008279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95733b4dcca098b4fae9ee7a06157bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  purpleBalloonPrefab: {fileID: 5968875976201957356, guid: 78158bb8d0975c243892301252dec68d, type: 3}
---- !u!4 &1246008281
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246008279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342687400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1772,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
 --- !u!114 &1704118570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,6 +1865,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8714395bb55f74d4e9c4752b6d2bcc49, type: 3}
   - {fileID: 21300000, guid: 0b621f2cf57af4041beffacdbf78b466, type: 3}
   - {fileID: 21300000, guid: 4ffa01f15813c5349841afa482ac7757, type: 3}
+  timerCountdownText: {fileID: 1210157305}
 --- !u!1 &1710933852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,6 +1932,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704118572}
     m_Modifications:
+    - target: {fileID: 2199427270731651798, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_Name
+      value: PurpleBalloonCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 4620049765908935192, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_text
       value: blue
@@ -1942,6 +1952,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8180781577192005795, guid: 9e3b3057919018d47a38372c74c03dd1, type: 2}
+    - target: {fileID: 4620049765908935193, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 44
+      objectReference: {fileID: 0}
     - target: {fileID: 4620049765988881232, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1958,6 +1972,14 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8180781577192005795, guid: 9e3b3057919018d47a38372c74c03dd1, type: 2}
+    - target: {fileID: 4620049766262893427, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620049766475455068, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 124
+      objectReference: {fileID: 0}
     - target: {fileID: 4620049766475455071, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_text
       value: red
@@ -1978,6 +2000,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4620049766661905332, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: checkImg.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620049766661905332, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: purpleBalloonCounter
+      value: 
+      objectReference: {fileID: 1784820920}
+    - target: {fileID: 4620049766661905332, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: checkImg.Array.data[3]
+      value: 
+      objectReference: {fileID: 103822151}
     - target: {fileID: 4620049766661905333, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2066,8 +2100,27 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: da8fd29e680ca2e4b983573ddb726e7e, type: 3}
+    - target: {fileID: 5711489416554375061, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 164
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461996846753349244, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_Name
+      value: CheckImg (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+--- !u!114 &1784820920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5701059188400447897, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+  m_PrefabInstance: {fileID: 1754388903}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1819112895
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,7 +2164,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847475731
 GameObject:

@@ -1814,6 +1814,7 @@ MonoBehaviour:
   buttonSprites:
   - {fileID: 21300000, guid: 8714395bb55f74d4e9c4752b6d2bcc49, type: 3}
   - {fileID: 21300000, guid: 0b621f2cf57af4041beffacdbf78b466, type: 3}
+  timerCountdownText: {fileID: 0}
 --- !u!1 &1710933852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1881,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1704118572}
     m_Modifications:
+    - target: {fileID: 2199427270731651798, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4620049765908935192, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_text
       value: blue

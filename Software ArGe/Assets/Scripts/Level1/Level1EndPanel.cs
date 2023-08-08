@@ -21,13 +21,19 @@ public class Level1EndPanel : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] Sprite[] buttonSprites;
 
+    [SerializeField] TMP_Text timerCountdownText;
+
+
     Animator hourglassAnim;
+    Timer timer;
 
     void Start()
     {
         banner = panelBG.GetComponent<Image>();
         health = FindObjectOfType<Health>();
         hourglassAnim = GameObject.Find("Hourglass").GetComponent<Animator>();
+        timer = FindObjectOfType<Timer>();
+        timerCountdownText = GameObject.Find("TimerCountDown").GetComponent<TMP_Text>();
     }
 
     public void WonPanel()
@@ -35,6 +41,8 @@ public class Level1EndPanel : MonoBehaviour
         panel.SetActive(true);
         banner.sprite = banners[0];
         hourglassAnim.enabled = false;
+
+        timerCountdownText.enabled = false;
 
         if(SceneManager.GetActiveScene().name == "Level1")
         {
@@ -51,12 +59,15 @@ public class Level1EndPanel : MonoBehaviour
 
     }
     public void LosePanel()
-    {
+    {   
+        //timer.SetTimer(0); // SONRADAN EKLENDİ sıkıntıyı bu çıkarıyor
         health.ReduceHealth();
         panel.SetActive(true);
         banner.sprite = banners[1];
         button.image.sprite = buttonSprites[1];
         hourglassAnim.enabled = false;
+
+        timerCountdownText.enabled = false;
 
         if (SceneManager.GetActiveScene().name == "Level1")
         {

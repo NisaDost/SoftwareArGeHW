@@ -12,12 +12,13 @@ public class PurpleBalloonMovement : MonoBehaviour
     private Animator anim;
     private AudioSource audioSource;
 
-    //Level1EndPanel level1EndPanel;
+    Level1EndPanel level1EndPanel;
+    BalloonCounter balloonCounter;
     Timer timer;
 
     void Start()
     {
-
+        balloonCounter = FindObjectOfType<BalloonCounter>();
         timer = FindObjectOfType<Timer>();
         rb = GetComponent<Rigidbody2D>();
   
@@ -25,7 +26,7 @@ public class PurpleBalloonMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
-        //level1EndPanel = FindObjectOfType<Level1EndPanel>();
+        level1EndPanel = FindObjectOfType<Level1EndPanel>();
 
         anim = purpleBalloon.GetComponent<Animator>();
 
@@ -44,10 +45,18 @@ public class PurpleBalloonMovement : MonoBehaviour
     {
         audioSource.Play();
         Pop();
-        Time.timeScale = 0f;
-        timer.SetTimer(0f);
+
+        balloonCounter.ReducePurpleBalloonNum();
+        balloonCounter.IncreaseRedBalloonNum();
+        balloonCounter.IncreaseYellowBalloonNum();
+        balloonCounter.IncreaseBlueBalloonNum();
 
         GetComponent<Collider2D>().enabled = false;
+    }
+
+    void LoadLosePanel()
+    {
+        level1EndPanel.LosePanel(); // animasyonda event ile çağırdım
     }
 
     void Pop()

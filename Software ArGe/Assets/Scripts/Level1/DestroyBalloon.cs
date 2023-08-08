@@ -6,6 +6,6 @@ public class DestroyBalloon : MonoBehaviour
 {
     void Destroy()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); //animasyonda event ile çağırdım
     }
 }

@@ -44,10 +44,13 @@ public class BombMovement : MonoBehaviour
     {
         audioSource.Play();
         Explode();
-        Time.timeScale = 0f;
-        timer.SetTimer(0f);
-
+        Time.timeScale = 0f; 
         GetComponent<Collider2D>().enabled = false;
+    }
+
+    void LoadLosePanel()
+    {
+        level1EndPanel.LosePanel(); //animasyonda event ile çağırdım
     }
 
     void Explode()
