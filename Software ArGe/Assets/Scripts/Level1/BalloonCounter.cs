@@ -57,7 +57,7 @@ public class BalloonCounter : MonoBehaviour
         {
             yellowBalloonNum = 0;
             checkImg[1].SetActive(true);
-            if (!yellowBalloonCheck) //plays only once
+            if (!yellowBalloonCheck)
             {
                 yellowBalloonCheck = true;
                 audioSource.Play();
@@ -70,7 +70,7 @@ public class BalloonCounter : MonoBehaviour
         if (blueBalloonNum <= 0)
         {
             blueBalloonNum = 0;
-            checkImg[2].SetActive(true);//plays only once
+            checkImg[2].SetActive(true);
             if (!blueBalloonCheck)
             {
                 audioSource.Play();

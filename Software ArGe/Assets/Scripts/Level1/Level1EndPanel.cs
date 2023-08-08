@@ -20,7 +20,6 @@ public class Level1EndPanel : MonoBehaviour
 
     [SerializeField] Button button;
     [SerializeField] Sprite[] buttonSprites;
-    Sprite buttonSprite;
 
     Animator hourglassAnim;
 
