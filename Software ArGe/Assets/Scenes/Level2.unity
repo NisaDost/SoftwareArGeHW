@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1629915619121703904, guid: d69c70a26da498345a49572349c79423, type: 3}
+      propertyPath: m_text
+      value: LEVEL 2 TASKS
+      objectReference: {fileID: 0}
     - target: {fileID: 1629915619121703905, guid: d69c70a26da498345a49572349c79423, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 136
@@ -1793,7 +1797,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 5329011ce9743554b940ae3c659e2dd2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1987,8 +1991,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1858443242}
   - {fileID: 1226734149}
+  - {fileID: 1858443242}
   - {fileID: 33708870}
   - {fileID: 1342687401}
   - {fileID: 87188277}
@@ -2182,7 +2186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620049766661905333, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4620049766661905333, guid: 8cc6f9d5e1560dd4891b09ee2fabbb7f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2436,7 +2440,7 @@ RectTransform:
   - {fileID: 1979751258}
   - {fileID: 1514002593}
   m_Father: {fileID: 1704118572}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

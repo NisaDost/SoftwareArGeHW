@@ -26,7 +26,7 @@ public class StartPanel : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "Level2")
         {
-            taskText.text = "● Avoid the bombs!\n● Purple balloons adds +1 to other balloon numbers!";
+            taskText.text = "● Avoid the bombs!\n● Purple balloons add +1 to other balloon numbers unless they are 0!";
         }
         checkButton.onClick.AddListener(CheckButton);
     }
