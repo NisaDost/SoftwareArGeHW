@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
 {
     Level1EndPanel level1EndPanel;
 
-    float heartCooldown = 5f;
+    float heartCooldown = 300f;
     bool noMoreLives = false;
 
     [SerializeField] TMP_Text healthTimerText;

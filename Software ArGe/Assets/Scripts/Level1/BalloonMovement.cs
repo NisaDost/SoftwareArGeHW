@@ -15,10 +15,12 @@ public class BalloonMovement : MonoBehaviour
     private Animator anim;
     private AudioSource audioSource;
 
-
+    Level1EndPanel level1EndPanel;
     void Start()
     {
         balloonCounter = FindObjectOfType<BalloonCounter>(); // bu referans olmazsa balon sayısı ekrana yazılmaz
+
+        level1EndPanel = FindObjectOfType<Level1EndPanel>();
 
         rb = GetComponent<Rigidbody2D>();
         randomBalloons = GetComponent<GameObject>();
@@ -39,7 +41,7 @@ public class BalloonMovement : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         audioSource.Play();
         PopBalloon();
@@ -60,6 +62,13 @@ public class BalloonMovement : MonoBehaviour
         }
         GetComponent<Collider2D>().enabled = false;
     }
+    void Update()
+    {
+        if(level1EndPanel.isPanelActive == true)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void PopBalloon()
     {
@@ -72,5 +81,10 @@ public class BalloonMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void DestroyBalloons()
+    {
+        
     }
 }

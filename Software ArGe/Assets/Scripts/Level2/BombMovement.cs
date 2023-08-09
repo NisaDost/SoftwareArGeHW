@@ -37,7 +37,14 @@ public class BombMovement : MonoBehaviour
 
         force = new Vector3(Random.Range(-100, 100), 150, 0);
         rb.AddForce(force);
+    }
 
+      void Update()
+    {
+        if(level1EndPanel.isPanelActive == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()

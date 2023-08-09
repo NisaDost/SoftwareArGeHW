@@ -25,6 +25,7 @@ public class Level1EndPanel : MonoBehaviour
 
     StartPanel startPanel;
 
+    public bool isPanelActive = false;
 
     Animator hourglassAnim;
     Timer timer;
@@ -41,8 +42,10 @@ public class Level1EndPanel : MonoBehaviour
 
     public void WonPanel()
     {
-        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
+        isPanelActive = true;
         panel.SetActive(true);
+
+        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
         banner.sprite = banners[0];
         hourglassAnim.enabled = false;
 
@@ -66,9 +69,11 @@ public class Level1EndPanel : MonoBehaviour
     }
     public void LosePanel()
     {   
+        isPanelActive = true;
+        panel.SetActive(true);
+        
         startPanel.canStart = false; //start panel ile timescale 0 lanıyor
         health.ReduceHealth();
-        panel.SetActive(true);
         banner.sprite = banners[1];
         button.image.sprite = buttonSprites[1];
         hourglassAnim.enabled = false;

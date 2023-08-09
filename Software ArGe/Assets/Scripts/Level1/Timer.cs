@@ -51,7 +51,6 @@ public class Timer : MonoBehaviour
 
         if (balloonCounter.UpdateChecks())
         {
-            //Time.timeScale = 0; //sıkıntılı
             if (isLevelWon == true) // win yazısını 1 kere almak için
             {
                 Debug.Log("You Win");
