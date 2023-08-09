@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
     [SerializeField] Button playButton;
+    [SerializeField] Button quitButton;
     [SerializeField] GameObject soundButton;
     [SerializeField] Sprite[] audioSprite;
 
     void Start()
     {
         Time.timeScale = 0;
+        quitButton = GameObject.Find("QuitButton").GetComponent<Button>();
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         soundButton = GameObject.Find("SoundButton");
         
@@ -41,5 +43,8 @@ public class Buttons : MonoBehaviour
             soundButton.GetComponent<Image>().sprite = audioSprite[0];
 
         }
+    }
+    public void Quit(){
+        Application.Quit();
     }
 }
