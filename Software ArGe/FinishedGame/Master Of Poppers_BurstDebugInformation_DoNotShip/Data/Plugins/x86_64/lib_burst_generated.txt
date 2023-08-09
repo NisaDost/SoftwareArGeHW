@@ -124,7 +124,7 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_ANIMATION_BURST
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
---linker-options=PdbAltPath="Software ArGe_Data/Plugins/x86_64"
+--linker-options=PdbAltPath="Master Of Poppers_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
 --output=D:\Nisa\Documents\Github\SoftwareArGeHW\Software ArGe\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=D:\Nisa\Documents\Github\SoftwareArGeHW\Software ArGe\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
@@ -275,7 +275,7 @@ Library: lib_burst_generated
 --compilation-defines=ENABLE_ANIMATION_BURST
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
---linker-options=PdbAltPath="Software ArGe_Data/Plugins/x86_64"
+--linker-options=PdbAltPath="Master Of Poppers_Data/Plugins/x86_64"
 --generate-link-xml=Temp\burst.link.xml
 --output=D:\Nisa\Documents\Github\SoftwareArGeHW\Software ArGe\Temp\StagingArea\Data\Plugins\x86_64\lib_burst_generated
 --root-assembly=D:\Nisa\Documents\Github\SoftwareArGeHW\Software ArGe\Temp\StagingArea\Data\Managed\UnityEngine.UI.dll
