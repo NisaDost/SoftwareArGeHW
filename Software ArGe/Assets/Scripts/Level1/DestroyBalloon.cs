@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DestroyBalloon : MonoBehaviour
 {
+    //balon patlama animasyonu oynadığında event ile objeyi yok eder
     void Destroy()
     {
-        Destroy(gameObject); //animasyonda event ile çağırdım
+        Destroy(gameObject);
     }
 }

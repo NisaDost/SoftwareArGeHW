@@ -26,6 +26,8 @@ public class Health : MonoBehaviour
         healthTimerText = GameObject.Find("HealthTimerText").GetComponent<TMP_Text>();
         healthTimerText.enabled = false;
     }
+
+    //can bilgisine göre kalp görsellerini değiştirir
     void Update()
     {
         if (noMoreLives == true && heartCooldown > 0)
@@ -53,6 +55,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    //canı azaltır
     public int ReduceHealth()
     {
         health--;
@@ -64,6 +67,7 @@ public class Health : MonoBehaviour
         return health;
     }
 
+    //tüm canlar bittiğinde cooldown başlatır ve bittiğinde canları fuller
     public void StartHealthTimer(float timeToDisplay)
     {
         healthTimerText.enabled = true; 

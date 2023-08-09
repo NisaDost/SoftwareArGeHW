@@ -18,6 +18,7 @@ public class Buttons : MonoBehaviour
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         soundButton = GameObject.Find("SoundButton");
         
+        //mute buton işlevi
         if (AudioListener.volume == 1f)
         {
             soundButton.GetComponent<Image>().sprite = audioSprite[0];

@@ -14,13 +14,18 @@ public class PurpleBalloonSpawner : MonoBehaviour
     void Start()
     {
         startPanel = FindObjectOfType<StartPanel>();
+
         InvokeRepeating("RNG", 0f, 1f);
+        //üretilen rastgele sayıya göre mor balon üretir
         InvokeRepeating("SpawnPurpleBalloon", 0f, 1f);
     }
+    //rasgele sayı üretir
     int RNG()
     {
         return Random.Range(0, 12);
     }
+
+    //levele göre belli özelliklerde mor balon üretir
     void SpawnPurpleBalloon()
     {
         if(SceneManager.GetActiveScene().name == "Level2" && startPanel.canStart == true)

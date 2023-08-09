@@ -18,6 +18,7 @@ public class StartPanel : MonoBehaviour
         checkButton = GameObject.Find("CheckButton").GetComponent<Button>();
     }
 
+    //level başladığında levele göre ekrana görev paneli getirir
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Level1")
@@ -30,6 +31,7 @@ public class StartPanel : MonoBehaviour
         }
         checkButton.onClick.AddListener(CheckButton);
     }
+    //tik butonuna basıldığında leveli başlatır
     void CheckButton()
     {
         Time.timeScale = 1;

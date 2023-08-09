@@ -38,20 +38,22 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        //oyun süresini belirleyen sayaç burada hesaplanır ve ekrana yazdırılır
         if (startPanel.canStart == true)
         {
             currentTime -= 1f * Time.unscaledDeltaTime; //oyun süresini belirleyen timer
             TimerCoundown.text = currentTime.ToString("0");
         }
-            
+
+        //oyun süresi 10 saniyenin altına indiğinde yazı kırmızıya döner  
         if (currentTime < 10)
         {
             TimerCoundown.color = Color.red;
         }
-
+        
         if (balloonCounter.UpdateChecks())
         {
-            if (isLevelWon == true) // win yazısını 1 kere almak için
+            if (isLevelWon == true) // win yazısını 1 kere almak için flag
             {
                 Debug.Log("You Win");
                 isLevelWon = false;
@@ -60,6 +62,7 @@ public class Timer : MonoBehaviour
             }  
         }
         
+        //süre bittiğinde oyunu kaybettirir
         if (currentTime <= 0)
         {
             currentTime = 0;
@@ -67,7 +70,7 @@ public class Timer : MonoBehaviour
             
             if (balloonCounter.UpdateChecks() == false ) 
             {
-                if (isLevelLose == true) // lose yazısını 1 kere almak için
+                if (isLevelLose == true) // lose yazısını 1 kere almak için flag
                 {
                     Debug.Log("You Lose");
                     isLevelLose = false;

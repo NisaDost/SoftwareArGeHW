@@ -33,6 +33,7 @@ public class BombMovement : MonoBehaviour
 
         sr.sprite = bomb.GetComponent<SpriteRenderer>().sprite;
         
+        //bomba rastgele bir yere konumlandırılır ve rastgele bir kuvvet vektörü eklenir
         transform.position = new Vector3(Random.Range(-8.5f, 8.5f), transform.position.y, transform.position.z);
 
         force = new Vector3(Random.Range(-100, 100), 150, 0);
@@ -41,12 +42,14 @@ public class BombMovement : MonoBehaviour
 
       void Update()
     {
+        //panel açıksa bomba yok olur
         if(level1EndPanel.isPanelActive == true)
         {
             Destroy(gameObject);
         }
     }
 
+    //bombaya tıklandığında çalışır
     private void OnMouseDown()
     {
         audioSource.Play();
@@ -55,11 +58,13 @@ public class BombMovement : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
     }
 
+    //bomba patlama animasyonu sonunda event ile objeyi yok eder
     void LoadLosePanel()
     {
-        level1EndPanel.LosePanel(); //animasyonda event ile çağırdım
+        level1EndPanel.LosePanel();
     }
 
+    //bomba patlama animasyonu
     void Explode()
     {
         anim.SetTrigger("Boom");

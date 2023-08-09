@@ -15,6 +15,7 @@ public class BalloonSpawner : MonoBehaviour
         InvokeRepeating("SpawnBalloon", 0f, 1f);
     }
 
+    //levele göre belli özelliklerde balon üretir
     void SpawnBalloon()
     {
         if(SceneManager.GetActiveScene().name == "Level1" && startPanel.canStart == true)

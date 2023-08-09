@@ -28,6 +28,7 @@ public class BalloonMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
 
+        //rastgele balon oluştururur ve üzerine rastgele bir kuvvet vektörü ekler
         balloonNo = Random.Range(0, balloons.Length);
 
         anim.runtimeAnimatorController = balloons[balloonNo].GetComponent<Animator>().runtimeAnimatorController;
@@ -41,27 +42,26 @@ public class BalloonMovement : MonoBehaviour
 
     }
 
+    //balona  tıklandığında çalışır
     public void OnMouseDown()
     {
         audioSource.Play();
         PopBalloon();
         if (balloons[balloonNo].tag == "RedBalloon")
         {
-            //Debug.Log("Red Balloon Clicked");
             balloonCounter.ReduceRedBalloonNum();
         }
         if (balloons[balloonNo].tag == "YellowBalloon")
         {
-            //Debug.Log("Yellow Balloon Clicked");
             balloonCounter.ReduceYellowBalloonNum();
         }
         if (balloons[balloonNo].tag == "BlueBalloon")
         {
-            //Debug.Log("Blue Balloon Clicked");
             balloonCounter.ReduceBlueBalloonNum();                        
         }
         GetComponent<Collider2D>().enabled = false;
     }
+    //paneller açıkken objeleri yok eder
     void Update()
     {
         if(level1EndPanel.isPanelActive == true)
@@ -70,6 +70,7 @@ public class BalloonMovement : MonoBehaviour
         }
     }
 
+    //balon patlama animasyonu
     void PopBalloon()
     {
         anim.SetTrigger("Pop");
@@ -83,8 +84,4 @@ public class BalloonMovement : MonoBehaviour
         }
     }
 
-    void DestroyBalloons()
-    {
-        
-    }
 }

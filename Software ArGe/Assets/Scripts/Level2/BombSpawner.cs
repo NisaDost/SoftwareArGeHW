@@ -15,6 +15,7 @@ public class BombSpawner : MonoBehaviour
         InvokeRepeating("SpawnBomb", 0f, 2.5f);
     }
 
+    //levele göre belli özelliklerde bomba üretir
     void SpawnBomb()
     {
         if(SceneManager.GetActiveScene().name == "Level2" && startPanel.canStart == true)

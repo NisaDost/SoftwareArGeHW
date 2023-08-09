@@ -36,12 +36,14 @@ public class BalloonCounter : MonoBehaviour
     }
     void Update()
     {
+        //kalan balan numaralarını ekrana yazdırma
         purpleBalloonCounter.text = purpleBalloonNum.ToString();
         redBalloonCounter.text = redBalloonNum.ToString();
         yellowBalloonCounter.text = yellowBalloonNum.ToString();
         blueBalloonCounter.text = blueBalloonNum.ToString();
     }
 
+#region balon numaralarını azaltma
     public void ReduceRedBalloonNum()
     {
         this.redBalloonNum--;
@@ -99,7 +101,9 @@ public class BalloonCounter : MonoBehaviour
             }
         }
     }
+#endregion
 
+#region balon numaralarını arttırma
     public void IncreaseRedBalloonNum()
     {
         if (redBalloonNum != 0)
@@ -121,7 +125,9 @@ public class BalloonCounter : MonoBehaviour
             this.blueBalloonNum++;
         }
     }
+#endregion
     
+    //tüm balonlar patladığında true döndürür
     public bool UpdateChecks()
     {
         if(SceneManager.GetActiveScene().name == "Level1")

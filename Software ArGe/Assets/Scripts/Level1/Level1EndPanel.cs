@@ -40,12 +40,13 @@ public class Level1EndPanel : MonoBehaviour
         timerCountdownText = GameObject.Find("TimerCountDown").GetComponent<TMP_Text>();
     }
 
+    //oyun kazanıldığında ekrana kazanma paneli getirir
     public void WonPanel()
     {
         isPanelActive = true;
         panel.SetActive(true);
 
-        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
+        startPanel.canStart = false;
         banner.sprite = banners[0];
         hourglassAnim.enabled = false;
 
@@ -67,12 +68,13 @@ public class Level1EndPanel : MonoBehaviour
         }
 
     }
+    //oyun kaybedildiğinde levele göre ekrana kaybetme paneli getirir
     public void LosePanel()
     {   
         isPanelActive = true;
         panel.SetActive(true);
         
-        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
+        startPanel.canStart = false;
         health.ReduceHealth();
         banner.sprite = banners[1];
         button.image.sprite = buttonSprites[1];
