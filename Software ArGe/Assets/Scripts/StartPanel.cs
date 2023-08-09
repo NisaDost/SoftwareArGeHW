@@ -9,10 +9,11 @@ public class StartPanel : MonoBehaviour
     [SerializeField] TMP_Text taskText;
     [SerializeField] Button checkButton;
 
+    public bool canStart = false;
 
     void Start()
     {
-        
+        Time.timeScale = 0;
         taskText = GameObject.Find("Tasks").GetComponent<TMP_Text>();
         checkButton = GameObject.Find("CheckButton").GetComponent<Button>();
     }
@@ -23,11 +24,16 @@ public class StartPanel : MonoBehaviour
         {
             taskText.text = "● Pop all the given balloons before the time runs out!";
         }
+        else if (SceneManager.GetActiveScene().name == "Level2")
+        {
+            taskText.text = "● Avoid the bombs!\n● Purple balloons adds +1 to other balloon numbers!";
+        }
         checkButton.onClick.AddListener(CheckButton);
     }
     void CheckButton()
     {
         Time.timeScale = 1;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        canStart = true;
     }
 }

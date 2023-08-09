@@ -12,6 +12,7 @@ public class Buttons : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0;
         playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         soundButton = GameObject.Find("SoundButton");
         

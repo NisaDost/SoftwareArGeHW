@@ -17,23 +17,33 @@ public class Timer : MonoBehaviour
     bool isLevelLose = true;
 
     [SerializeField] TMP_Text TimerCoundown;
+
+    StartPanel startPanel;
     
     
     void Start()
     {
-        Time.timeScale = 1;
+        startPanel = FindObjectOfType<StartPanel>();
+        if (startPanel.canStart == true)
+        {
+            Time.timeScale = 1;
+        }
         balloonCounter = FindObjectOfType<BalloonCounter>();
         health = FindObjectOfType<Health>();
         levelEndPanel = GetComponent<Level1EndPanel>();
 
         currentTime = startingTime;
+
     }
 
     void Update()
     {
-        currentTime -= 1f * Time.unscaledDeltaTime; //oyun süresini belirleyen timer
-        TimerCoundown.text = currentTime.ToString("0");
-
+        if (startPanel.canStart == true)
+        {
+            currentTime -= 1f * Time.unscaledDeltaTime; //oyun süresini belirleyen timer
+            TimerCoundown.text = currentTime.ToString("0");
+        }
+            
         if (currentTime < 10)
         {
             TimerCoundown.color = Color.red;

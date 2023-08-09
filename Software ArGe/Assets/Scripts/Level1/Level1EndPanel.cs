@@ -23,12 +23,15 @@ public class Level1EndPanel : MonoBehaviour
 
     [SerializeField] TMP_Text timerCountdownText;
 
+    StartPanel startPanel;
+
 
     Animator hourglassAnim;
     Timer timer;
 
     void Start()
     {
+        startPanel = FindObjectOfType<StartPanel>();
         banner = panelBG.GetComponent<Image>();
         health = FindObjectOfType<Health>();
         hourglassAnim = GameObject.Find("Hourglass").GetComponent<Animator>();
@@ -38,6 +41,7 @@ public class Level1EndPanel : MonoBehaviour
 
     public void WonPanel()
     {
+        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
         panel.SetActive(true);
         banner.sprite = banners[0];
         hourglassAnim.enabled = false;
@@ -49,18 +53,20 @@ public class Level1EndPanel : MonoBehaviour
             winStatusText.text = "Level 1 Completed!";
             button.image.sprite = buttonSprites[0];
             button.onClick.AddListener(NextLevel);
+            startPanel.canStart = false;
         }
         else if(SceneManager.GetActiveScene().name == "Level2")
         {
             winStatusText.text = "Game Completed!";
             button.image.sprite = buttonSprites[2];
             button.onClick.AddListener(Home);
+            startPanel.canStart = false;
         }
 
     }
     public void LosePanel()
     {   
-        //timer.SetTimer(0); // SONRADAN EKLENDİ sıkıntıyı bu çıkarıyor
+        startPanel.canStart = false; //start panel ile timescale 0 lanıyor
         health.ReduceHealth();
         panel.SetActive(true);
         banner.sprite = banners[1];
